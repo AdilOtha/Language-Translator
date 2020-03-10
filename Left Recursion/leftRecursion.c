@@ -10,13 +10,12 @@ int main(void) {
     int in=3;
     printf("enter the no of productions:");
     scanf("%d",&n);
-    n=4;
     printf("enter the grammer as E->E-A :\n");
     for(i=0;i<n;i++)
     {
         scanf("%s",p[i]);
     }
-    for(i=0;i>n;i++)
+    for(i=0;i<n;i++)
     {
         printf("\nGRAMMER: %s",p[i]);
         nt=p[i][0];
@@ -24,9 +23,9 @@ int main(void) {
         {
             a=p[i][in+1];
             printf("is left recursive. \n");
-            while(p[i][in]!=0 && p[i][in]!='|')
+            while(p[i][in]!='\0' && p[i][in]!='|')
                 in++;
-            if(p[i][in]!=0)
+            if(p[i][in]!='\0')
             {
                 b=p[i][in+1];
                 printf("grammer without left recursion:\n");
